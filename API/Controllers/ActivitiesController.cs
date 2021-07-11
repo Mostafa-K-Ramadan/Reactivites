@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Persistence;
 using Application.Activities;
 using System;
 using Microsoft.AspNetCore.Authorization;
@@ -13,6 +11,7 @@ namespace API.Controllers
     public class ActivitiesController : BaseApiController
     {
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<List<Activity>>> GetActivities()
         {
